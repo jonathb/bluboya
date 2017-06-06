@@ -9,8 +9,6 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.33.100"
   config.vm.hostname = "docker"
 
-  # To make running ansible playbooks against vagrant hosts a smoother experience, we
-  # run apt-get udpate and copy our public key to the host.
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
   SHELL
